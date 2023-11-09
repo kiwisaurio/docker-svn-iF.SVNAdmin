@@ -39,7 +39,7 @@ RUN sed -i 's/deny from all/Require all denied/g' /var/www/html/.htaccess && ech
 
 VOLUME ["/var/svn", "/etc/apache2/dav_svn", "/etc/apache2/keys", "/var/hooks"]
 
-EXPOSE 80 443
+EXPOSE 80 443 3690
 
 HEALTHCHECK --interval=1m --timeout=5s --retries=3 CMD ps aux | grep apache2 | grep www-data || exit 1
 
